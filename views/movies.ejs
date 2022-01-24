@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <p>Movies details</p>
+
+    <form action="movieDetail" method="POST">
+           <select class="example" name="id">
+            
+               <% for(let i=0;i<moviesTitle.length;i++){%>
+                     <option value="<%=  i+1  %>"><%=moviesTitle[i].title%></option>
+               <%}%>
+           </select>
+           <input type="submit" value="Consultar">
+    </form>   
+
+    <% for(let i=0;i<movies.length;i++){%>
+
+           <h1><%=movies[i].title%> <%=movies[i].year%></h1>     
+           <h1>----------------------</h1>
+           <ul>
+              <h2>Casting</h2>
+                  <% for(let j=0;j<movies[i].actors.length;j++){%>
+                      <li><%= movies[i].actors[j].name%> </li>
+                  <%}%>
+           </ul>
+           <h1>----------------------</h1>
+      <ul>
+        <h2>Directors</h2>
+        <% for(let k=0;k<movies[i].directors.length;k++){%>
+          <li><%= movies[i].directors[k].name%> </li>
+        <%}%>
+      </ul>
+      <h1>----------------------</h1>
+      <ul>
+        <h2>Producers</h2>
+        <% for(let l=0;l<movies[i].producers.length;l++){%>
+          <li><%= movies[i].producers[l].name%> </li>
+        <%}%>
+      </ul>
+      <h1>----------------------------------------------------------------------------</h1>
+      <%}%>
+    
+  </body>
+</html>

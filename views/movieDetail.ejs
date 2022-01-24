@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <p>Movies details</p>
+    <form action="movies/movieDetail" method="POST">
+           <select class="example" name="id">
+        
+        <% for(let i=0;i<movies.length;i++){%>
+        <option value="<%=  i+1  %>"><%=movies[i].title%></option>
+        <%}%>
+  </select>
+
+
+      <input type="submit" value="Consultar">
+    </form>
+</body>
+</html>
